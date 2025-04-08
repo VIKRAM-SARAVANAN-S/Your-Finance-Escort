@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Your-Finance-Escort.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a58a870d829c7d73bcf6344e23a3f76187ad40c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd29baea2971e65d84204bb1051fa91004713306")]
 [assembly: System.Reflection.AssemblyProductAttribute("Your-Finance-Escort.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Your-Finance-Escort.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
