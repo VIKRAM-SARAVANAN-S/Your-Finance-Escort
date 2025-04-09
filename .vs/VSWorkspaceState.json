@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Backend"
+    "\\Backend",
+    "\\Backend\\Your-Finance-Escort",
+    "\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI",
+    "\\Document"
   ],
   "PreviewInSolutionExplorer": false
 }

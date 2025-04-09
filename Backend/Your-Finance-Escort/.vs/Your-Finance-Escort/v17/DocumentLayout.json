@@ -1,12 +1,137 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\models\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\models\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|d:\\capstone_project\\your-finance-escort\\backend\\your-finance-escort\\your-finance-escort.services.authapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6785749-381D-47ED-8A39-5BCFD9CA8AA4}|Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj|solutionrelative:your-finance-escort.services.authapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\appsettings.json",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\appsettings.json",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T04:51:24.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Program.cs",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Program.cs",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:51:40.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:47:36.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\Dto\\UserDto.cs",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Models\\Dto\\UserDto.cs",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\Dto\\UserDto.cs",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Models\\Dto\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:45:26.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JwtOptions.cs",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\JwtOptions.cs",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Models\\JwtOptions.cs",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Models\\JwtOptions.cs",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Models\\JwtOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:44:39.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:34:07.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Your-Finance-Escort.Services.AuthAPI\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Your-Finance-Escort.Services.AuthAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAUAAAAAAAAAAABRwBoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T00:14:44.213Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
