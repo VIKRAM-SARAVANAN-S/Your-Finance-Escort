@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Your_Finance_Escort.Services.AuthAPI.Models;
+using System.Collections.Generic;
+using System.Reflection.Emit;
 
 namespace Your_Finance_Escort.Services.AuthAPI.Data
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        }
-        protected override void OnModelCreating(ModelBuilder builder)
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
         }
-
     }
 }

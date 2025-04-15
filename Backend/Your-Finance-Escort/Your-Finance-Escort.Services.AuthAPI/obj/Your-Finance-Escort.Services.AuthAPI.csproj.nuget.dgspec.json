@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj": {}
+    "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj": {}
   },
   "projects": {
-    "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj": {
+    "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj",
+        "projectUniqueName": "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj",
         "projectName": "Your-Finance-Escort.Services.AuthAPI",
-        "projectPath": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj",
+        "projectPath": "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\Your-Finance-Escort.Services.AuthAPI.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Capstone_Project\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\obj\\",
+        "outputPath": "D:\\Capstone Project\\Your-Finance-Escort\\VIKRAM-SARAVANAN-S\\Your-Finance-Escort\\Backend\\Your-Finance-Escort\\Your-Finance-Escort.Services.AuthAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,11 +53,11 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[14.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.15, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -71,17 +71,17 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
