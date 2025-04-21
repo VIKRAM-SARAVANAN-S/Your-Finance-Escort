@@ -25,63 +25,107 @@ namespace Your_Finance_Escort.Services.AuthAPI.Service
             _roleManager = roleManager;
         }
 
-        public async Task<string> Register(RegistrationRequestDto request)
+        public async Task<ResponseDto> Register(RegistrationRequestDto request)
         {
-            var user = new ApplicationUser
+            try
             {
-                UserName = request.Email,
-                Email = request.Email,
-                Name = request.Name,
-                PhoneNumber = request.PhoneNumber
-            };
+                // Validate input
+                if (string.IsNullOrWhiteSpace(request.Email) ||
+                    string.IsNullOrWhiteSpace(request.Password))
+                {
+                    return new ResponseDto { IsSuccess = false, Message = "Email and password are required" };
+                }
 
-            var result = await _userManager.CreateAsync(user, request.Password);
-            if (result.Succeeded)
-            {
-                bool res = await AssignRole(request.Email, request.Role);
-                if (res == true)
+                var user = new ApplicationUser
                 {
-                    return null;
-                }
-                else
+                    UserName = request.Email,
+                    Email = request.Email,
+                    Name = request.Name,
+                    PhoneNumber = request.PhoneNumber,
+                    EmailConfirmed = true // For demo purposes
+                };
+
+                var result = await _userManager.CreateAsync(user, request.Password);
+                if (!result.Succeeded)
                 {
-                    return "error assigning role";
+                    return new ResponseDto
+                    {
+                        IsSuccess = false,
+                        Message = string.Join(", ", result.Errors.Select(e => e.Description))
+                    };
                 }
+
+                // Assign role
+                if (!string.IsNullOrWhiteSpace(request.Role))
+                {
+                    var roleResult = await AssignRole(user.Email, request.Role);
+                    if (!roleResult)
+                    {
+                        return new ResponseDto
+                        {
+                            IsSuccess = false,
+                            Message = "Role assignment failed"
+                        };
+                    }
+                }
+
+                return new ResponseDto
+                {
+                    IsSuccess = true,
+                    Message = "Registration successful"
+                };
             }
-            return result.Errors.FirstOrDefault()?.Description;
+            catch (Exception ex)
+            {
+                return new ResponseDto
+                {
+                    IsSuccess = false,
+                    Message = $"Registration failed: {ex.Message}"
+                };
+            }
         }
 
         public async Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto)
         {
-            var user = await _userManager.FindByNameAsync(loginRequestDto.UserName);
-            if (user == null || !await _userManager.CheckPasswordAsync(user, loginRequestDto.Password))
+            try
             {
-                return new LoginResponseDto { User = null, Token = "", Role = "" };
+                var user = await _userManager.FindByEmailAsync(loginRequestDto.UserName) ??
+                          await _userManager.FindByNameAsync(loginRequestDto.UserName);
+
+                if (user == null || !await _userManager.CheckPasswordAsync(user, loginRequestDto.Password))
+                {
+                    return new LoginResponseDto
+                    {
+                        User = null,
+                        Token = "",
+                        Message = "Invalid credentials"
+                    };
+                }
+
+                var token = await _jwtTokenGenerator.GenerateToken(user);
+                var roles = await _userManager.GetRolesAsync(user);
+
+                return new LoginResponseDto
+                {
+                    User = new UserDto
+                    {
+                        Id = user.Id,
+                        Name = user.Name,
+                        Email = user.Email,
+                        PhoneNumber = user.PhoneNumber
+                    },
+                    Token = token,
+                    Role = roles.FirstOrDefault(),
+                    Message = "Login successful"
+                };
             }
-
-            // Generate the token and await the result
-            var token = await _jwtTokenGenerator.GenerateToken(user); // Make sure to await this
-
-            // Retrieve user role
-            var roles = await _userManager.GetRolesAsync(user);
-            var role = roles.FirstOrDefault(); // Assuming single role per user
-
-            // Populate UserDto with user's details
-            var userDto = new UserDto
+            catch (Exception ex)
             {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber
-            };
-
-            // Return the response with populated UserDto, Token, and Role
-            return new LoginResponseDto
-            {
-                User = userDto,
-                Token = token,
-                Role = role
-            };
+                return new LoginResponseDto
+                {
+                    Message = $"Login failed: {ex.Message}"
+                };
+            }
         }
 
         public async Task<bool> AssignRole(string email, string roleName)

@@ -1,44 +1,52 @@
 {
-  "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7010"
-  },
   "Routes": [
-    //{
-    //  "DownstreamPathTemplate": "/api/expenses/user/{userId}",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "expense-budget-service",
-    //      "Port": 5002
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/expenses/user/{userId}",
-    //  "UpstreamHttpMethod": [ "Get" ]
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/api/budgets/user/{userId}",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "expense-budget-service",
-    //      "Port": 5002
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/budgets/user/{userId}",
-    //  "UpstreamHttpMethod": [ "Get" ]
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/api/income/user/{userId}",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "income-service",
-    //      "Port": 5001
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/income/user/{userId}",
-    //  "UpstreamHttpMethod": [ "Get" ]
-    //}
-  ]
+    // Auth Microservice Routes
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7243 // Your auth service port
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
 
+    // Plaid Microservice Routes (Sample)
+    {
+      "DownstreamPathTemplate": "/api/plaid/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7244 // Your Plaid service port
+        }
+      ],
+      "UpstreamPathTemplate": "/plaid/{everything}",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+
+    // Savings Algorithm Microservice (Sample)
+    {
+      "DownstreamPathTemplate": "/api/savings/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7245 // Your savings service port
+        }
+      ],
+      "UpstreamPathTemplate": "/savings/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7010" // Your gateway URL
+  }
 }

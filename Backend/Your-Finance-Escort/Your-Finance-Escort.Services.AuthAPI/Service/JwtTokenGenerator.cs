@@ -12,49 +12,46 @@ namespace Your_Finance_Escort.Services.AuthAPI.Service
    
         public class JwtTokenGenerator : IJwtTokenGenerator
         {
-            private readonly JwtOptions _jwtOptions;
-            private readonly UserManager<ApplicationUser> _userManager; // Add UserManager to get roles
+        private readonly JwtOptions _jwtOptions;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-            public JwtTokenGenerator(IOptions<JwtOptions> jwtOptions, UserManager<ApplicationUser> userManager)
-            {
-                _jwtOptions = jwtOptions.Value;
-                _userManager = userManager; // Initialize UserManager
-            }
+        public JwtTokenGenerator(
+            IOptions<JwtOptions> jwtOptions,
+            UserManager<ApplicationUser> userManager)
+        {
+            _jwtOptions = jwtOptions.Value;
+            _userManager = userManager;
+        }
 
-            public async Task<string> GenerateToken(ApplicationUser applicationUser)
-            {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
+        public async Task<string> GenerateToken(ApplicationUser applicationUser)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
 
-                // Base claims (email, id, and username)
-                var claimList = new List<Claim>
+            var claims = new List<Claim>
+        {
+            new Claim(JwtRegisteredClaimNames.Email, applicationUser.Email),
+            new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
+            new Claim(JwtRegisteredClaimNames.Name, applicationUser.UserName)
+        };
+
+            // Add roles
+            var userRoles = await _userManager.GetRolesAsync(applicationUser);
+            claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
+
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                new Claim(JwtRegisteredClaimNames.Email, applicationUser.Email),
-                new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
-                new Claim(JwtRegisteredClaimNames.Name, applicationUser.UserName)
+                Audience = _jwtOptions.Audience,
+                Issuer = _jwtOptions.Issuer,
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
             };
 
-                // Fetch roles for the user and add them as claims
-                var roles = await _userManager.GetRolesAsync(applicationUser);
-                foreach (var role in roles)
-                {
-                    claimList.Add(new Claim(ClaimTypes.Role, role));
-                }
-
-                // Token descriptor with additional role claims
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Audience = _jwtOptions.Audience,
-                    Issuer = _jwtOptions.Issuer,
-                    Subject = new ClaimsIdentity(claimList),
-                    Expires = DateTime.UtcNow.AddDays(7),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                };
-
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-                return tokenHandler.WriteToken(token);
-            }
-
-
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
+    }
     }

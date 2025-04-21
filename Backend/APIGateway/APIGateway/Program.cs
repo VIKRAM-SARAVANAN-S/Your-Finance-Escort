@@ -9,30 +9,26 @@ namespace APIGateway
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Configuration.AddJsonFile("ocelot.json", optional: false,reloadOnChange: true);
+            // Add Ocelot with configuration
+            builder.Configuration.AddJsonFile("ocelot.json");
             builder.Services.AddOcelot(builder.Configuration);
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            // Add CORS for local Angular development
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("LocalAngular", policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
+            // Middleware pipeline
+            app.UseCors("LocalAngular");
+            app.UseOcelot().Wait();  // For .NET 6+ without async main
 
             app.Run();
         }

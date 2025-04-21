@@ -1,0 +1,61 @@
+<div class="register-container">
+    <div class="register-overlay"></div>
+    <div class="register-card">
+      <div class="register-header">
+        <h2>Create Account</h2>
+        <p>Join us today</p>
+      </div>
+      
+      <form class="register-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input 
+            type="text" 
+            id="fullName" 
+            name="fullName" 
+            [(ngModel)]="register.fullName" 
+            placeholder="Enter your full name"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="emailId" 
+            [(ngModel)]="register.emailId" 
+            placeholder="Enter your email"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="userName" 
+            [(ngModel)]="register.userName" 
+            placeholder="Choose a username"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="register.password" 
+            placeholder="Create a password"
+          >
+        </div>
+        
+        <button type="button" class="register-btn" (click)="createUser()">Register</button>
+        
+        <div class="login-link">
+          Already have an account? <a routerLink="/login">Login here</a>
+        </div>
+      </form>
+    </div>
+  </div>

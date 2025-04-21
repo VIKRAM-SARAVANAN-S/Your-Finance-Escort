@@ -7,28 +7,34 @@ namespace Your_Finance_Escort.Services.AuthAPI.Service
 {
     public class UserService : IUserService
     {
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        private readonly AppDbContext _context;
-
-        public UserService(AppDbContext context)
+        public UserService(UserManager<ApplicationUser> userManager)
         {
-            _context = context;
+            _userManager = userManager;
         }
 
-        public async Task<List<CustomerDto>> GetUsersByRole(string role)
+        public async Task<List<UserDto>> GetUsersByRole(string role)
         {
-            var users = await _context.Roles
-                .Where(u => u.Name == role) // Filtering by role
-                .ToListAsync();
-
-            var employeeDtos = users.Select(u => new CustomerDto
+            try
             {
+                var usersInRole = await _userManager.GetUsersInRoleAsync(role);
 
-                Name = u.Name,
-
-            }).ToList();
-
-            return employeeDtos;
+                return usersInRole.Select(user => new UserDto
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                // Log error
+                throw new ApplicationException($"Error retrieving users by role: {ex.Message}");
+            }
         }
+
+
     }
 }

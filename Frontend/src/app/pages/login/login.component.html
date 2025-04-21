@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Please login to your account</p>
+    </div>
+    
+    <form class="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="userName" 
+          [(ngModel)]="loginObj.userName" 
+          placeholder="Enter your username"
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="loginObj.password" 
+          placeholder="Enter your password"
+        >
+      </div>
+      
+      <div class="form-options">
+        <!-- <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div> -->
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+      
+      <button type="button" class="login-btn" (click)="onLogin()">Login</button>
+      
+      <div class="register-link">
+        Don't have an account? <a routerLink="/register">Register here</a>
+      </div>
+    </form>
+  </div>
+</div>
