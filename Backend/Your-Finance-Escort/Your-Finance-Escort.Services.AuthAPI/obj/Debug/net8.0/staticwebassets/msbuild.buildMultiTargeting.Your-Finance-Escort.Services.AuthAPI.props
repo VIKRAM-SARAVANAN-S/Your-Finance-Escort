@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Your-Finance-Escort.Services.AuthAPI.props" />
-</Project>
